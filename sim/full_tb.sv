@@ -8,7 +8,7 @@ module full_tb;
   localparam BAUD_TICK = CLK_FREQ / BAUD_RATE;
 
   logic clk;
-  logic rst_n_raw;
+  logic rst_n;
   logic i_uart_rx_pin;
   logic o_uart_tx_pin;
   logic led;
@@ -19,7 +19,7 @@ module full_tb;
       .BAUD_RATE(BAUD_RATE)
   ) u_dut (
       .clk(clk),
-      .rst_n_raw(rst_n_raw),
+      .rst_n(rst_n),
       .i_uart_rx_pin(i_uart_rx_pin),
       .o_uart_tx_pin(o_uart_tx_pin),
       .led(led)
@@ -46,11 +46,11 @@ module full_tb;
   //main sim
   initial begin
     clk = 1'b0;
-    rst_n_raw = 1'b0;  //start in rst
+    rst_n = 1'b0;  //start in rst
     i_uart_rx_pin = 1'b1;  //uart idle is high.
     //hold rst
     #10000ns;
-    rst_n_raw = 1'b1;
+    rst_n = 1'b1;
     $display("Waiting for logic to settle after rst");
     #10000ns;
     $display("[%0t ns] Logic settled after reset", $time);
