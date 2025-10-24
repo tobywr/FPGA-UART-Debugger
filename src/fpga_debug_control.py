@@ -64,7 +64,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     print("\n--- FPGA debugger ---")
-    print("Type your command (e.g : w05AB")
+    print("Type your command (e.g : w05AB)")
     print("Type quit or exit to exit.")
 
     while True:
@@ -81,10 +81,10 @@ if __name__ == "__main__":
 
             if cmd.startswith('w'):
                 send_command(cmd)
-                print(f"Write command send : {cmd}")
+                print(f"Write command sent : {cmd}")
 
             elif cmd.startswith('r'):
-                print(f"Read command send {cmd}")
+                print(f"Read command sent {cmd}")
                 value = handle_read(cmd)
                 print(f"Response : {value}")
 
