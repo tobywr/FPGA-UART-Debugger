@@ -23,11 +23,8 @@ _WINDOWS_ :
 - Look under sections : Ports (COM & LPT) and Universal Serial Bus Controllers. Note COM port number of FPGA Serial connection.
 
 _LINUX_ :
-  Method 1 :
-    - In Terminal, run `ls /dev/tty*` and locate your FPGA connection port (e.g : `/ttyUSB0`)
-
-  Method 2 :
-    - In terminal, after plugging FPGA in, run command : `sudo dmesg | tail -20` and look for serial converter / FPGA connected message.
+- Method 1 : In Terminal, run `ls /dev/tty*` and locate your FPGA connection port (e.g : `/ttyUSB0`)
+- Method 2 : In terminal, after plugging FPGA in, run command : `sudo dmesg | tail -20` and look for serial converter / FPGA connected message.
 
 ### Syntheszing + Opening serial viewer:
 Create a new project in Vivado/Quartus (Make sure to specify your model of hardware during project creation), and upload all `/src` files.
